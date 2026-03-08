@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VBF Syndic Pro+ | Professional Co-Property Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#d4af37;--gold-light:#e8c84a;--navy-deep:#020617;--navy-mid:#0f172a;--navy-light:#1e293b}
+    body{font-family:'Inter',sans-serif;background:var(--navy-deep);color:#f1f5f9;scroll-behavior:smooth}
+    .gold-text{color:var(--gold)}.gold-bg{background:var(--gold)}
+    .glass{background:rgba(255,255,255,.03);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.06)}
+    .hero-gradient{background:radial-gradient(ellipse at 70% 20%,#1e293b 0%,#020617 70%)}
+    .section-alt{background:var(--navy-mid)}
+    .card{background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:1.25rem;padding:2.5rem;transition:all .4s cubic-bezier(.25,.46,.45,.94)}
+    .card:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.4);box-shadow:0 24px 48px -12px rgba(0,0,0,.6),0 0 0 1px rgba(212,175,55,.15)}
+    .card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(212,175,55,.05));border:1px solid rgba(212,175,55,.2);margin-bottom:1.25rem;flex-shrink:0}
+    .stat-number{font-size:3rem;font-weight:900;line-height:1;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.3),transparent);margin:0 auto;max-width:200px}
+    .badge{background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);color:var(--gold);padding:5px 14px;border-radius:6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;display:inline-block}
+    .pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:600;color:#94a3b8;display:inline-flex;align-items:center;gap:6px}
+    .cta-glow{box-shadow:0 0 40px rgba(212,175,55,.25),0 8px 32px rgba(0,0,0,.4)}
+    .legal-scroll::-webkit-scrollbar{width:4px}.legal-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.03)}.legal-scroll::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .7s ease-out forwards}
+    .fade-up-d1{animation-delay:.1s;opacity:0}.fade-up-d2{animation-delay:.2s;opacity:0}.fade-up-d3{animation-delay:.3s;opacity:0}
+    .fade-up-d4{animation-delay:.4s;opacity:0}.fade-up-d5{animation-delay:.5s;opacity:0}.fade-up-d6{animation-delay:.6s;opacity:0}
+    .lang-btn{cursor:pointer;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);transition:all .2s}
+    .lang-btn.active{background:var(--gold);color:#000;border-color:var(--gold)}
+    .lang-btn:not(.active){color:#94a3b8;background:rgba(255,255,255,.05)}
+    .lang-btn:not(.active):hover{border-color:var(--gold);color:var(--gold)}
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<nav class="fixed w-full top-0 z-50 glass border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="logo.ico" alt="VBF Syndic Pro+" class="w-10 h-10 rounded-xl">
+      <div class="hidden sm:block leading-none">
+        <span class="text-base font-black tracking-tight uppercase block">Syndic Pro<span class="gold-text">+</span></span>
+        <span class="text-[9px] text-gray-500 font-semibold tracking-[.25em] uppercase" data-i18n="nav_sub">Co-Property Management</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 sm:gap-6">
+      <!-- Language Switcher -->
+      <div class="flex gap-1">
+        <button onclick="setLang('en')" id="lang-en" class="lang-btn active">EN</button>
+        <button onclick="setLang('fr')" id="lang-fr" class="lang-btn">FR</button>
+      </div>
+      <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+        <a href="#features" class="hover:text-white transition" data-i18n="nav_features">Features</a>
+        <a href="#audit" class="hover:text-white transition" data-i18n="nav_audit">Audit</a>
+        <a href="#why-us" class="hover:text-white transition" data-i18n="nav_why">Why Us</a>
+        <a href="#pricing" class="hover:text-white transition" data-i18n="nav_pricing">Pricing</a>
+      </div>
+      <a href="#pricing" class="px-5 py-2.5 gold-bg text-black rounded-lg font-black text-[11px] uppercase hover:scale-105 transition cta-glow" data-i18n="nav_cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<header class="pt-36 pb-28 px-6 hero-gradient relative overflow-hidden">
+  <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-[150px]"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px]"></div>
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+    <div class="flex flex-wrap justify-center gap-3 mb-8 fade-up">
+      <span class="badge">Desktop App</span><span class="badge">Windows</span><span class="badge">Offline-First</span><span class="badge" style="background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.3);color:#22c55e" data-i18n="badge_trial">Free Trial &mdash; Full Access</span><span class="badge" style="background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.3);color:#3b82f6" data-i18n="badge_demo">Demo Data Included</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[.95] tracking-tight fade-up fade-up-d1" data-i18n="hero_title">Professional Co-Property Management,<br>Without the Complexity.</h1>
+    <p class="text-lg sm:text-xl text-gray-400 leading-relaxed mb-4 max-w-3xl mx-auto fade-up fade-up-d2" data-i18n="hero_sub">
+      <strong class="text-white">VBF Syndic Pro+</strong> is the all-in-one desktop solution for co-property communities &mdash; budget, charges, payments, audits, owner statements, and general assembly reports in a single, secure, local application.
+    </p>
+    <p class="text-sm text-gray-500 mb-10 max-w-2xl mx-auto fade-up fade-up-d3" data-i18n="hero_tagline">
+      No cloud dependency. No monthly subscription. Built by a syndic council president, for syndic councils.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-up fade-up-d4">
+      <a href="#pricing" class="gold-bg text-black px-10 py-4 rounded-lg font-black uppercase text-sm shadow-xl hover:bg-yellow-500 transition cta-glow" data-i18n="hero_cta">Get Your License</a>
+      <a href="#features" class="px-10 py-4 rounded-lg font-bold text-sm text-gray-300 border border-white/10 hover:border-gold/40 hover:text-white transition" data-i18n="hero_explore">Explore Features &darr;</a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mt-16 fade-up fade-up-d5">
+      <div class="pill">&#x1f512; AES-256-GCM</div>
+      <div class="pill" data-i18n="pill_countries">&#x1f3e2; Multi-Country (MA, FR, BE, AD)</div>
+      <div class="pill" data-i18n="pill_audit">&#x1f4ca; Automated Audit Engine</div>
+      <div class="pill" data-i18n="pill_lang">&#x1f30d; French &amp; English</div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ THE CHALLENGE ══════════════ -->
+<section class="section-alt py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="badge mb-4" data-i18n="challenge_badge">The Challenge</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" data-i18n="challenge_title">Managing a Co-Property Takes the Right Tools</h2>
+      <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed" data-i18n="challenge_sub">
+        Volunteer syndic councils handle the same responsibilities as professional property managers. Having the right software makes the difference between efficient governance and time-consuming manual work.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card text-center">
+        <div class="text-4xl mb-4">&#x1f4c9;</div>
+        <h3 class="font-bold text-lg mb-2" data-i18n="ch1_title">Scattered Data</h3>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="ch1_desc">Multiple files, inconsistent formulas, different versions. A unified system keeps everything in one place and eliminates manual errors.</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-4xl mb-4">&#x1f50d;</div>
+        <h3 class="font-bold text-lg mb-2" data-i18n="ch2_title">Accountability &amp; Traceability</h3>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="ch2_desc">Owners deserve clear visibility into how community funds are managed. Structured records and audit trails build confidence at every general assembly.</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-4xl mb-4">&#x23f3;</div>
+        <h3 class="font-bold text-lg mb-2" data-i18n="ch3_title">Time-Intensive Reporting</h3>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="ch3_desc">Preparing the annual bilan, computing individual statements, and reconciling bank records requires significant volunteer time each year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FEATURES ══════════════ -->
+<section id="features" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="badge mb-4" data-i18n="feat_badge">Platform Capabilities</span>
+      <h2 class="text-3xl md:text-5xl font-black mt-4 mb-6 gold-text" data-i18n="feat_title">Everything You Need.<br>Nothing You Don&rsquo;t.</h2>
+      <p class="text-gray-400 text-lg max-w-3xl mx-auto" data-i18n="feat_sub">A purpose-built application covering every function a self-managed syndic council needs &mdash; from day-one setup to annual closing.</p>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      <div class="card fade-up fade-up-d1">
+        <div class="card-icon">&#x1f465;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f1_title">Owner &amp; Unit Registry</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f1_desc">Maintain a complete registry of co-owners and their property lots. Record sharing keys (tanti&egrave;mes), contact details, and ownership history. Search, filter, and export at any time.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]">Owners</span><span class="pill text-[10px]">Lots</span><span class="pill text-[10px]" data-i18n="f1_p3">Tanti&egrave;mes</span></div>
+      </div>
+      <div class="card fade-up fade-up-d2">
+        <div class="card-icon">&#x1f4b0;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f2_title">Budget &amp; Charges</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f2_desc">Create annual budgets with line-by-line breakdown. Record every expense against the correct account code with AI-powered automatic detection. Track budget variance in real time.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f2_p1">Budget Planning</span><span class="pill text-[10px]" data-i18n="f2_p2">Expense Entry</span><span class="pill text-[10px]" data-i18n="f2_p3">AI Account Matching</span></div>
+      </div>
+      <div class="card fade-up fade-up-d3">
+        <div class="card-icon">&#x1f4b3;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f3_title">Payments &amp; Collections</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f3_desc">Record owner payments against individual tranches. Track collection status and overdue balances. Automatic computation of advances, arrears, and per-owner balances across multiple fiscal years.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f3_p1">Payment Tracking</span><span class="pill text-[10px]" data-i18n="f3_p2">Overdue Detection</span><span class="pill text-[10px]">Multi-Tranche</span></div>
+      </div>
+      <div class="card fade-up fade-up-d4">
+        <div class="card-icon">&#x1f3e6;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f4_title">Treasury &amp; Bank Reconciliation</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f4_desc">Import bank statements directly and reconcile against recorded charges and payments. Manage cash account operations, internal transfers, and maintain a complete treasury trail.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f4_p1">Bank Import</span><span class="pill text-[10px]" data-i18n="f4_p2">Cash Account</span><span class="pill text-[10px]" data-i18n="f4_p3">Reconciliation</span></div>
+      </div>
+      <div class="card fade-up fade-up-d5">
+        <div class="card-icon">&#x1f4ca;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f5_title">Financial Statements (Bilan)</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f5_desc">Generate complete annual financial statements automatically. The bilan comptable, balance sheet, and income/expense summary are computed from your data &mdash; no manual formulas required.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]">Bilan Comptable</span><span class="pill text-[10px]" data-i18n="f5_p2">Balance Sheet</span><span class="pill text-[10px]" data-i18n="f5_p3">Auto-Computed</span></div>
+      </div>
+      <div class="card fade-up fade-up-d6">
+        <div class="card-icon">&#x1f4e7;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f6_title">Owner Portal &amp; Mailing</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f6_desc">Generate encrypted HTML portals for each owner showing their individual statement, charges breakdown, and balance. Send in bulk via email. Each file is self-contained and integrity-protected.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f6_p1">Encrypted HTML</span><span class="pill text-[10px]" data-i18n="f6_p2">Bulk Email</span><span class="pill text-[10px]" data-i18n="f6_p3">Integrity-Protected</span></div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      <div class="card fade-up fade-up-d1">
+        <div class="card-icon">&#x1f3db;&#xfe0f;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f7_title">General Assembly (AG)</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f7_desc">Prepare and document your Assembl&eacute;e G&eacute;n&eacute;rale with built-in meeting tools. Track attendance, compute quorum per tranche, record resolutions, and generate official meeting reports.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f7_p1">Quorum Tracking</span><span class="pill text-[10px]" data-i18n="f7_p2">Attendance</span><span class="pill text-[10px]">AGO / AGE</span></div>
+      </div>
+      <div class="card fade-up fade-up-d2">
+        <div class="card-icon">&#x1f4c4;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f8_title">Commissaire Report</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f8_desc">Generate a structured auditor report (Word .docx) ready for the commissaire aux comptes. All financial data pre-populated, audit findings included, formatted for official AG presentation.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f8_p1">Word Export</span><span class="pill text-[10px]" data-i18n="f8_p2">Auto-Generated</span><span class="pill text-[10px]" data-i18n="f8_p3">AG-Ready</span></div>
+      </div>
+      <div class="card fade-up fade-up-d3">
+        <div class="card-icon">&#x1f4e5;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f9_title">Smart Import Wizard</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f9_desc">Import existing data from Excel, CSV, and PDF files with an AI-powered column mapping engine. The wizard detects your column structure and maps it automatically.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]">Excel / CSV</span><span class="pill text-[10px]" data-i18n="f9_p2">PDF Extraction</span><span class="pill text-[10px]" data-i18n="f9_p3">AI Mapping</span></div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card fade-up fade-up-d1">
+        <div class="card-icon">&#x1f4e4;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f10_title">Export &amp; Backup</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f10_desc">Export any data view to Excel or CSV. Create encrypted .vbf backup files with AES-256-GCM integrity protection. Restore backups instantly. Your data remains portable and under your control.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f10_p1">Excel Export</span><span class="pill text-[10px]" data-i18n="f10_p2">Encrypted Backup</span><span class="pill text-[10px]" data-i18n="f10_p3">One-Click Restore</span></div>
+      </div>
+      <div class="card fade-up fade-up-d2">
+        <div class="card-icon">&#x1f30d;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f11_title">Multi-Country &amp; Legal</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f11_desc">Pre-configured for Morocco, France, Belgium, and Andorra. Each country has its own chart of accounts, legal reference documentation, expense categories, and regulatory framework.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]">&#x1f1f2;&#x1f1e6; Morocco</span><span class="pill text-[10px]">&#x1f1eb;&#x1f1f7; France</span><span class="pill text-[10px]">&#x1f1e7;&#x1f1ea; Belgium</span><span class="pill text-[10px]">&#x1f1e6;&#x1f1e9; Andorra</span></div>
+      </div>
+      <div class="card fade-up fade-up-d3">
+        <div class="card-icon">&#x1f6e0;&#xfe0f;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="f12_title">Maintenance Tracking</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="f12_desc">Schedule and track building maintenance tasks, repairs, and service contracts. Keep a history of interventions, costs, and upcoming renewals for full lifecycle management.</p>
+        <div class="flex flex-wrap gap-2"><span class="pill text-[10px]" data-i18n="f12_p1">Task Scheduling</span><span class="pill text-[10px]" data-i18n="f12_p2">Cost History</span><span class="pill text-[10px]" data-i18n="f12_p3">Contract Renewals</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONTEXTUAL AUDIT (KEY DIFFERENTIATOR) ══════════════ -->
+<section id="audit" class="section-alt py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="badge mb-4" data-i18n="audit_badge">Key Differentiator</span>
+      <h2 class="text-3xl md:text-5xl font-black mt-4 mb-6">
+        <span data-i18n="audit_title1">The Contextual Audit Engine:</span><br>
+        <span class="gold-text" data-i18n="audit_title2">Verify Claims, Not Just Numbers</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed" data-i18n="audit_intro">
+        Most tools check if the numbers add up. VBF Syndic Pro+ goes further: it helps the <strong class="text-white">commissaire aux comptes</strong> assess whether management decisions reflect the best use of community funds &mdash; by providing the data needed to ask the right questions.
+      </p>
+    </div>
+
+    <!-- Audit Scenario Cards -->
+    <div class="grid md:grid-cols-2 gap-8 mb-10">
+
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-lg font-bold mb-3 gold-text" data-i18n="aud1_title">&#x1f4cb; Contract Renewal Verification</h3>
+        <p class="text-gray-300 text-sm leading-relaxed mb-3" data-i18n="aud1_p1">
+          The syndic announces: <em>&ldquo;We changed the gardening contractor &mdash; the new one costs less.&rdquo;</em> But is that the full picture?
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="aud1_p2">
+          The contextual audit engine allows the commissaire to compare the old contract against the new one side by side: What was the previous scope of service? What is the new scope? Is the cost per intervention actually lower, or was the number of interventions reduced? The commissaire can verify whether the community is paying less for the same quality, or simply receiving less service.
+        </p>
+      </div>
+
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-lg font-bold mb-3 gold-text" data-i18n="aud2_title">&#x1f4b6; Cost Reduction Claims</h3>
+        <p class="text-gray-300 text-sm leading-relaxed mb-3" data-i18n="aud2_p1">
+          The syndic states: <em>&ldquo;Security costs will be lower next year.&rdquo;</em> The commissaire needs to verify: is this a genuine efficiency gain?
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="aud2_p2">
+          With the audit engine, the commissaire can cross-reference the current security contract, past invoices, and the proposed new terms. Did the number of guard hours decrease? Were overnight shifts removed? Is the quoted rate genuinely competitive, or does the reduction come from cutting coverage? The data is structured for this exact type of analysis.
+        </p>
+      </div>
+
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-lg font-bold mb-3 gold-text" data-i18n="aud3_title">&#x1f9fe; Invoice-Level Traceability</h3>
+        <p class="text-gray-300 text-sm leading-relaxed mb-3" data-i18n="aud3_p1">
+          Every charge recorded in the system can be traced back to its source document. The commissaire can verify each expense individually.
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="aud3_p2">
+          The audit engine flags entries that lack supporting documentation, detects duplicate charges, identifies amounts that fall outside expected ranges for a given account category, and highlights supplier changes mid-year. This gives the commissaire a structured checklist to work through, rather than manually reviewing stacks of paper.
+        </p>
+      </div>
+
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-lg font-bold mb-3 gold-text" data-i18n="aud4_title">&#x1f4ca; Budget vs. Actual Analysis</h3>
+        <p class="text-gray-300 text-sm leading-relaxed mb-3" data-i18n="aud4_p1">
+          Owners approved a budget at the last AG. Did the syndic stay within those limits? Where did variances occur, and are they justified?
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="aud4_p2">
+          The contextual audit automatically compares budgeted amounts against actual expenses, line by line and category by category. It highlights significant variances and lets the commissaire drill into the underlying charges. Were overruns caused by emergency repairs, price increases, or scope changes? The data provides the context for an informed assessment.
+        </p>
+      </div>
+    </div>
+
+    <!-- Audit Summary -->
+    <div class="card max-w-4xl mx-auto text-center">
+      <p class="text-lg text-gray-300 leading-relaxed" data-i18n="audit_summary">
+        The contextual audit engine transforms the commissaire&rsquo;s role from a <em>number checker</em> into an <em>informed evaluator</em>. It provides the structured data, cross-references, and comparisons needed to assess not just <strong class="text-white">whether the accounts are correct</strong>, but whether the management decisions behind them represent <strong class="gold-text">efficient and responsible use of community funds</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHY VBF ══════════════ -->
+<section id="why-us" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="badge mb-4" data-i18n="why_badge">Why VBF Syndic Pro+?</span>
+      <h2 class="text-3xl md:text-5xl font-black mt-4 mb-6" data-i18n="why_title">Built by a Syndic President.<br><span class="gold-text">For Syndic Councils.</span></h2>
+      <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed" data-i18n="why_sub">VBF Syndic Pro+ was designed from real-world syndic experience. Every feature addresses a concrete need that arose from managing a co-property with a volunteer council.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="w1_title">&#x2714; Professional-Grade Management</h3>
+        <p class="text-gray-300 text-sm leading-relaxed" data-i18n="w1_desc">Give your volunteer council the same operational capabilities as a professional property manager. Budget tracking, payment management, financial statements, and audit tools &mdash; all in one application, at a fraction of the cost of outsourcing.</p>
+      </div>
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="w2_title">&#x2714; Your Data, Your Control</h3>
+        <p class="text-gray-300 text-sm leading-relaxed" data-i18n="w2_desc">All data stays on your computer. No cloud servers, no SaaS subscriptions, no third-party access. Export your data at any time in standard formats. If you stop using the software, your data remains yours, fully portable.</p>
+      </div>
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="w3_title">&#x2714; Bank-Level Encryption</h3>
+        <p class="text-gray-300 text-sm leading-relaxed" data-i18n="w3_desc">All stored data is encrypted with AES-256-GCM &mdash; the standard used by financial institutions. Backups are encrypted. Owner portal files use authenticated encryption with integrity verification: any unauthorized modification is detected automatically.</p>
+      </div>
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="w4_title">&#x2714; AG-Ready in Minutes</h3>
+        <p class="text-gray-300 text-sm leading-relaxed" data-i18n="w4_desc">The bilan, individual owner statements, audit report, and commissaire document are generated automatically from your data. One click and you have everything the general assembly needs &mdash; formatted, accurate, and ready to present.</p>
+      </div>
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="w5_title">&#x2714; Role-Based Governance</h3>
+        <p class="text-gray-300 text-sm leading-relaxed" data-i18n="w5_desc">Assign specific roles to council members: the treasurer manages charges and budget, the payment assistant handles collections, the commissaire has audit-only access. Full delegation with clear boundaries at every level.</p>
+      </div>
+      <div class="card border-l-4" style="border-left-color:var(--gold)">
+        <h3 class="text-xl font-bold mb-3 gold-text" data-i18n="w6_title">&#x2714; Designed for Transparency</h3>
+        <p class="text-gray-300 text-sm leading-relaxed" data-i18n="w6_desc">Every owner can receive their own encrypted personal statement with full breakdowns of charges, payments, and balances. The audit engine provides structured verification tools. Clear answers are always available when questions arise.</p>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="card max-w-4xl mx-auto">
+      <h3 class="text-center text-xl font-black mb-8 gold-text uppercase" data-i18n="comp_title">VBF Syndic Pro+ vs. The Alternatives</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="text-left py-3 px-4 text-gray-400 font-semibold"></th>
+              <th class="py-3 px-4 text-center gold-text font-bold">VBF Syndic Pro+</th>
+              <th class="py-3 px-4 text-center text-gray-500 font-semibold" data-i18n="comp_h2">Spreadsheets</th>
+              <th class="py-3 px-4 text-center text-gray-500 font-semibold" data-i18n="comp_h3">Professional Syndic</th>
+              <th class="py-3 px-4 text-center text-gray-500 font-semibold" data-i18n="comp_h4">Generic Accounting</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-300">
+            <tr class="border-b border-white/5"><td class="py-3 px-4 font-medium" data-i18n="comp_r1">Co-property workflows</td><td class="text-center gold-text font-bold">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td><td class="text-center text-green-400">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td></tr>
+            <tr class="border-b border-white/5"><td class="py-3 px-4 font-medium" data-i18n="comp_r2">Contextual audit engine</td><td class="text-center gold-text font-bold">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td><td class="text-center text-gray-500" data-i18n="comp_varies">Varies</td><td class="text-center text-red-400">&#x2717;</td></tr>
+            <tr class="border-b border-white/5"><td class="py-3 px-4 font-medium" data-i18n="comp_r3">Sharing key distribution</td><td class="text-center gold-text font-bold">&#x2713;</td><td class="text-center text-gray-500" data-i18n="comp_manual">Manual</td><td class="text-center text-green-400">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td></tr>
+            <tr class="border-b border-white/5"><td class="py-3 px-4 font-medium" data-i18n="comp_r4">Encrypted owner portal</td><td class="text-center gold-text font-bold">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td><td class="text-center text-red-400">&#x2717;</td><td class="text-center text-red-400">&#x2717;</td></tr>
+            <tr class="border-b border-white/5"><td class="py-3 px-4 font-medium" data-i18n="comp_r5">Data stays local</td><td class="text-center gold-text font-bold">&#x2713;</td><td class="text-center text-green-400">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td><td class="text-center text-gray-500" data-i18n="comp_varies">Varies</td></tr>
+            <tr class="border-b border-white/5"><td class="py-3 px-4 font-medium" data-i18n="comp_r6">No recurring fees</td><td class="text-center gold-text font-bold">&#x2713;</td><td class="text-center text-green-400">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td><td class="text-center text-red-400">&#x2717;</td></tr>
+            <tr><td class="py-3 px-4 font-medium" data-i18n="comp_r7">AG-ready reports</td><td class="text-center gold-text font-bold">&#x2713;</td><td class="text-center text-gray-500" data-i18n="comp_manual">Manual</td><td class="text-center text-green-400">&#x2713;</td><td class="text-center text-red-400">&#x2717;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ HOW IT WORKS ══════════════ -->
+<section id="how-it-works" class="section-alt py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="badge mb-4" data-i18n="how_badge">Getting Started</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" data-i18n="how_title">Up and Running in <span class="gold-text">30 Minutes</span></h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto" data-i18n="how_sub">No complex setup. No training required. Import your existing data and start producing professional results immediately.</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full gold-bg text-black text-2xl font-black flex items-center justify-center mx-auto mb-4">1</div>
+        <h3 class="font-bold mb-2" data-i18n="step1_t">Install</h3>
+        <p class="text-gray-400 text-sm" data-i18n="step1_d">Download the Windows installer. Launch the app. Select your country and language.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full gold-bg text-black text-2xl font-black flex items-center justify-center mx-auto mb-4">2</div>
+        <h3 class="font-bold mb-2" data-i18n="step2_t">Import</h3>
+        <p class="text-gray-400 text-sm" data-i18n="step2_d">Use the Import Wizard to bring in your owners, lots, and existing financial data from Excel files.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full gold-bg text-black text-2xl font-black flex items-center justify-center mx-auto mb-4">3</div>
+        <h3 class="font-bold mb-2" data-i18n="step3_t">Manage</h3>
+        <p class="text-gray-400 text-sm" data-i18n="step3_d">Record charges, track payments, reconcile bank statements, and monitor your budget in real time.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full gold-bg text-black text-2xl font-black flex items-center justify-center mx-auto mb-4">4</div>
+        <h3 class="font-bold mb-2" data-i18n="step4_t">Report</h3>
+        <p class="text-gray-400 text-sm" data-i18n="step4_d">Generate the bilan, owner statements, audit report, and commissaire documents for your AG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECURITY ══════════════ -->
+<section class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="badge mb-4" data-i18n="sec_badge">Security Architecture</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" data-i18n="sec_title">Your Financial Data Deserves<br><span class="gold-text">Bank-Level Protection</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card">
+        <div class="card-icon">&#x1f512;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="s1_title">AES-256-GCM Encryption</h3>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="s1_desc">All data stored locally is encrypted with AES-256-GCM using PBKDF2 key derivation. This is the standard used by financial institutions and government agencies worldwide.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#x1f6e1;&#xfe0f;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="s2_title">Integrity-Protected Documents</h3>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="s2_desc">Owner portal HTML files use authenticated encryption. If anyone modifies any content &mdash; an amount, a name, a balance &mdash; the integrity check fails and the document displays a protection notice. Financial integrity is cryptographically guaranteed.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#x1f46e;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="s3_title">4-Level Access Control</h3>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="s3_desc">Four distinct roles with granular permissions: <strong>Syndic</strong> (full access), <strong>Charges Assistant</strong> (budget &amp; expenses), <strong>Payments Assistant</strong> (collections &amp; statements), and <strong>Commissaire</strong> (audit-only).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#x1f4be;</div>
+        <h3 class="text-lg font-bold mb-3" data-i18n="s4_title">Encrypted Backups</h3>
+        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="s4_desc">Backup files (.vbf) are encrypted with their own AES-256-GCM key. Regular reminders ensure you never lose data. Restore any backup with one click. No cloud dependency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ STATS ══════════════ -->
+<section class="section-alt py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div><div class="stat-number">20+</div><p class="text-gray-400 text-sm mt-2 font-medium" data-i18n="stat1">Integrated Modules</p></div>
+      <div><div class="stat-number">4</div><p class="text-gray-400 text-sm mt-2 font-medium" data-i18n="stat2">Countries Supported</p></div>
+      <div><div class="stat-number">3</div><p class="text-gray-400 text-sm mt-2 font-medium" data-i18n="stat3">Audit Engines</p></div>
+      <div><div class="stat-number">256</div><p class="text-gray-400 text-sm mt-2 font-medium" data-i18n="stat4">-bit Encryption</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TRIAL & DEMO ══════════════ -->
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="card text-center" style="border-color:rgba(34,197,94,.3);background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(34,197,94,.02))">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+        <div class="text-left md:w-1/2">
+          <h3 class="text-2xl font-black mb-3" data-i18n="trial_title">&#x1f3af; Try Before You Buy</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4" data-i18n="trial_desc">Download VBF Syndic Pro+ and explore every feature with <strong class="text-white">full access during the trial period</strong>. No credit card required, no feature restrictions. Every module is available from day one so you can evaluate the complete platform.</p>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="trial_demo">The installer includes a <strong class="text-white">ready-made demo data file</strong> that you can upload instantly. It contains a realistic co-property with owners, lots, charges, payments, and financial history &mdash; so you can see exactly how the application works with real-world data before entering your own.</p>
+        </div>
+        <div class="flex flex-col gap-4 md:w-1/2 items-center">
+          <div class="card text-center" style="padding:1.5rem 2rem">
+            <div class="text-3xl mb-2">&#x1f4e6;</div>
+            <div class="font-bold text-sm mb-1" data-i18n="trial_box1_t">Full-Access Trial</div>
+            <div class="text-gray-400 text-xs" data-i18n="trial_box1_d">All 20+ modules unlocked during trial</div>
+          </div>
+          <div class="card text-center" style="padding:1.5rem 2rem">
+            <div class="text-3xl mb-2">&#x1f4c2;</div>
+            <div class="font-bold text-sm mb-1" data-i18n="trial_box2_t">Demo Data File</div>
+            <div class="text-gray-400 text-xs" data-i18n="trial_box2_d">Upload the included .vbf file to explore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRICING ══════════════ -->
+<section id="pricing" class="section-alt py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="badge mb-4" data-i18n="price_badge">Simple Pricing</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" data-i18n="price_title">One License. <span class="gold-text">No Surprises.</span></h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto" data-i18n="price_sub">No monthly subscriptions. No per-seat fees. No hidden costs. Pay once for your community, and it is yours.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+      <div class="card text-center" style="border-color:rgba(212,175,55,.3)">
+        <div class="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4" data-i18n="plan1_label">Community License</div>
+        <div class="stat-number mb-2">20&euro;</div>
+        <div class="text-gray-400 text-sm mb-6" data-i18n="plan1_per">per owner &bull; one-time</div>
+        <div class="divider mb-6"></div>
+        <ul class="text-left text-gray-300 text-sm space-y-3 mb-8">
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f1">All 20+ modules included</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f2">Unlimited data entry</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f3">All export formats (Excel, CSV, Word, HTML)</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f4">Encrypted owner portal generation</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f5">Automated audit engine</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f6">Multi-country &amp; bilingual support</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f7">4 installations included (one per role)</span></li>
+        </ul>
+        <div class="text-[11px] text-gray-500 italic mb-2" data-i18n="plan1_eg">Example: 40 owners = 800&euro; one-time</div>
+        <div class="text-[11px] text-gray-500 italic" data-i18n="plan1_seats">Each license activates on 4 computers &mdash; Syndic, Charges, Payments &amp; Commissaire</div>
+      </div>
+      <div class="card text-center">
+        <div class="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4" data-i18n="plan2_label">Annual Maintenance</div>
+        <div class="stat-number mb-2">10&euro;</div>
+        <div class="text-gray-400 text-sm mb-6" data-i18n="plan2_per">per owner &bull; per year &bull; optional</div>
+        <div class="divider mb-6"></div>
+        <ul class="text-left text-gray-300 text-sm space-y-3 mb-8">
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f1">Priority email support</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f2">All software updates</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f3">New features as released</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f4">Regulatory updates</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f5">Data migration assistance</span></li>
+        </ul>
+        <div class="text-[11px] text-gray-500 italic" data-i18n="plan2_note">Cancel anytime &mdash; your data and license remain valid</div>
+      </div>
+    </div>
+
+    <!-- Purchase Buttons -->
+    <div class="text-center mb-16">
+      <p class="text-gray-400 text-sm mb-6" data-i18n="buy_info">Purchase securely, then request your activation key by email.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://buymeacoffee.com/vbfpro/e/512975" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3.5 px-8 rounded-lg text-base shadow-lg transition">&#x2615; BuyMeACoffee</a>
+        <a href="https://ko-fi.com/s/f9e4c6a5e9" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3.5 px-8 rounded-lg text-base shadow-lg transition">&#x2764;&#xfe0f; Ko-fi</a>
+      </div>
+    </div>
+
+    <!-- License Activation Form -->
+    <div id="license" class="card max-w-2xl mx-auto" style="border-color:rgba(212,175,55,.2)">
+      <h3 class="text-2xl font-black mb-2 gold-text uppercase text-center" data-i18n="form_title">License Activation</h3>
+      <p class="text-gray-400 text-sm mb-8 text-center" data-i18n="form_sub">Submit your details below. After payment confirmation, your activation key will be sent within 24 hours.</p>
+      <form action="https://formspree.io/f/xgolynoq" method="POST" class="space-y-4">
+        <input type="hidden" name="_next" value="https://vbfpronavigator.github.io/vbf-budget-pro/thanks.html">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition text-sm" data-i18n-placeholder="form_name" placeholder="Full Name">
+          <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition text-sm" data-i18n-placeholder="form_email" placeholder="Email Address">
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" name="community_name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition text-sm" data-i18n-placeholder="form_community" placeholder="Community / Residence Name">
+          <input type="number" name="owner_count" min="1" required class="w-full bg-white/5 border border-white/10 p-4 rounded-lg outline-none focus:border-gold transition text-sm" data-i18n-placeholder="form_owners" placeholder="Number of Owners">
+        </div>
+        <select name="country" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold text-sm">
+          <option value="MA">Morocco</option><option value="FR">France</option><option value="BE">Belgium</option><option value="AD">Andorra</option>
+        </select>
+        <select name="maintenance" id="sel-maintenance" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold text-sm">
+          <option value="yes" data-i18n="form_maint_yes">Include Annual Maintenance (10&euro; / owner / year)</option>
+          <option value="no" data-i18n="form_maint_no">License Only &mdash; No Maintenance</option>
+        </select>
+        <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg text-sm tracking-wide" data-i18n="form_submit">Request License Activation</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ LEGAL ══════════════ -->
+<section class="section-alt py-24 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="badge mb-4" data-i18n="legal_badge">Legal</span>
+      <h2 class="text-2xl font-black mt-4 mb-4" data-i18n="legal_title">Privacy Policy &amp; Terms</h2>
+    </div>
+    <div class="card legal-scroll max-h-[500px] overflow-y-auto">
+      <div class="text-sm leading-relaxed text-gray-300 space-y-5">
+        <p><strong data-i18n="legal_eff">Effective Date:</strong> March 6, 2026 &bull; <strong data-i18n="legal_upd">Last Updated:</strong> March 8, 2026</p>
+        <h4 class="text-base font-bold gold-text uppercase" data-i18n="leg1_h">1. Overview</h4>
+        <p data-i18n="leg1_p">VBF Syndic Pro+ is committed to protecting your privacy. This policy explains our data practices for the desktop application.</p>
+        <h4 class="text-base font-bold gold-text uppercase" data-i18n="leg2_h">2. Data Storage</h4>
+        <p data-i18n="leg2_p"><strong>All data is stored locally on your device.</strong> VBF Syndic Pro+ does not transmit community accounting data to external servers. The only outbound connection is license key validation.</p>
+        <h4 class="text-base font-bold gold-text uppercase" data-i18n="leg3_h">3. Data Collection</h4>
+        <p data-i18n="leg3_p"><strong>We collect no central cloud data.</strong> The app is local-first. Your residence data stays entirely on your infrastructure.</p>
+        <h4 class="text-base font-bold gold-text uppercase" data-i18n="leg4_h">4. Security</h4>
+        <p data-i18n="leg4_p">Protected by AES-256-GCM encryption, role-based access control, and full user control over backup, export, and deletion operations.</p>
+        <h4 class="text-base font-bold gold-text uppercase" data-i18n="leg5_h">5. User Rights</h4>
+        <p data-i18n="leg5_p">You can access, export, restore, and permanently delete all data at any time. No approval required.</p>
+        <h4 class="text-base font-bold gold-text uppercase" data-i18n="leg6_h">6. Licensing</h4>
+        <p data-i18n="leg6_p">Licensed per community based on owner count. License keys are perpetual. Maintenance subscriptions are optional and cancellable.</p>
+        <h4 class="text-base font-bold gold-text uppercase" data-i18n="leg7_h">7. Contact</h4>
+        <p>Email: <span class="gold-text">usethis1234@proton.me</span><br>Developer: VBF PRO</p>
+        <div class="border-t border-white/10 pt-4 mt-6 italic text-center gold-text text-sm" data-i18n="legal_quote">&ldquo;Your community data is yours alone. We don&rsquo;t monetize it, and we don&rsquo;t broker it.&rdquo;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="border-t border-white/5 py-12 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex items-center gap-3">
+      <img src="logo.ico" alt="VBF" class="w-8 h-8 rounded-lg">
+      <span class="text-sm font-bold text-gray-400">&copy; 2025&ndash;2026 VBF PRO &mdash; usethis1234@proton.me</span>
+    </div>
+    <div class="flex gap-8 text-[11px] font-semibold uppercase tracking-widest text-gray-500">
+      <a href="#features" class="hover:text-white transition" data-i18n="nav_features">Features</a>
+      <a href="#why-us" class="hover:text-white transition" data-i18n="nav_why">Why Us</a>
+      <a href="#pricing" class="hover:text-white transition" data-i18n="nav_pricing">Pricing</a>
+      <a href="mailto:usethis1234@proton.me" class="hover:text-white transition">Contact</a>
+    </div>
+    <div class="text-[10px] text-gray-600 text-center md:text-right" data-i18n="footer_tag">
+      Built with conviction in Morocco &#x1f1f2;&#x1f1e6;<br>For self-managed communities worldwide
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ I18N ENGINE ══════════════ -->
+<script>
+const T = {
+en: {
+  nav_sub:"Co-Property Management",nav_features:"Features",nav_audit:"Audit",nav_why:"Why Us",nav_pricing:"Pricing",nav_cta:"Get Started",
+  hero_title:"Professional Co-Property Management,<br>Without the Complexity.",
+  hero_sub:'<strong class="text-white">VBF Syndic Pro+</strong> is the all-in-one desktop solution for co-property communities &mdash; budget, charges, payments, audits, owner statements, and general assembly reports in a single, secure, local application.',
+  hero_tagline:"No cloud dependency. No monthly subscription. Built by a syndic council president, for syndic councils.",
+  hero_cta:"Get Your License",hero_explore:"Explore Features &darr;",
+  pill_countries:"&#x1f3e2; Multi-Country (MA, FR, BE, AD)",pill_audit:"&#x1f4ca; Automated Audit Engine",pill_lang:"&#x1f30d; French &amp; English",
+  challenge_badge:"The Challenge",challenge_title:"Managing a Co-Property Takes the Right Tools",
+  challenge_sub:"Volunteer syndic councils handle the same responsibilities as professional property managers. Having the right software makes the difference between efficient governance and time-consuming manual work.",
+  ch1_title:"Scattered Data",ch1_desc:"Multiple files, inconsistent formulas, different versions. A unified system keeps everything in one place and eliminates manual errors.",
+  ch2_title:"Accountability &amp; Traceability",ch2_desc:"Owners deserve clear visibility into how community funds are managed. Structured records and audit trails build confidence at every general assembly.",
+  ch3_title:"Time-Intensive Reporting",ch3_desc:"Preparing the annual bilan, computing individual statements, and reconciling bank records requires significant volunteer time each year.",
+  feat_badge:"Platform Capabilities",feat_title:"Everything You Need.<br>Nothing You Don\u2019t.",feat_sub:"A purpose-built application covering every function a self-managed syndic council needs \u2014 from day-one setup to annual closing.",
+  f1_title:"Owner &amp; Unit Registry",f1_desc:"Maintain a complete registry of co-owners and their property lots. Record sharing keys (tanti\u00e8mes), contact details, and ownership history. Search, filter, and export at any time.",f1_p3:"Tanti\u00e8mes",
+  f2_title:"Budget &amp; Charges",f2_desc:"Create annual budgets with line-by-line breakdown. Record every expense against the correct account code with AI-powered automatic detection. Track budget variance in real time.",f2_p1:"Budget Planning",f2_p2:"Expense Entry",f2_p3:"AI Account Matching",
+  f3_title:"Payments &amp; Collections",f3_desc:"Record owner payments against individual tranches. Track collection status and overdue balances. Automatic computation of advances, arrears, and per-owner balances across multiple fiscal years.",f3_p1:"Payment Tracking",f3_p2:"Overdue Detection",
+  f4_title:"Treasury &amp; Bank Reconciliation",f4_desc:"Import bank statements directly and reconcile against recorded charges and payments. Manage cash account operations, internal transfers, and maintain a complete treasury trail.",f4_p1:"Bank Import",f4_p2:"Cash Account",f4_p3:"Reconciliation",
+  f5_title:"Financial Statements (Bilan)",f5_desc:"Generate complete annual financial statements automatically. The bilan comptable, balance sheet, and income/expense summary are computed from your data \u2014 no manual formulas required.",f5_p2:"Balance Sheet",f5_p3:"Auto-Computed",
+  f6_title:"Owner Portal &amp; Mailing",f6_desc:"Generate encrypted HTML portals for each owner showing their individual statement, charges breakdown, and balance. Send in bulk via email. Each file is self-contained and integrity-protected.",f6_p1:"Encrypted HTML",f6_p2:"Bulk Email",f6_p3:"Integrity-Protected",
+  f7_title:"General Assembly (AG)",f7_desc:"Prepare and document your Assembl\u00e9e G\u00e9n\u00e9rale with built-in meeting tools. Track attendance, compute quorum per tranche, record resolutions, and generate official meeting reports.",f7_p1:"Quorum Tracking",f7_p2:"Attendance",
+  f8_title:"Commissaire Report",f8_desc:"Generate a structured auditor report (Word .docx) ready for the commissaire aux comptes. All financial data pre-populated, audit findings included, formatted for official AG presentation.",f8_p1:"Word Export",f8_p2:"Auto-Generated",f8_p3:"AG-Ready",
+  f9_title:"Smart Import Wizard",f9_desc:"Import existing data from Excel, CSV, and PDF files with an AI-powered column mapping engine. The wizard detects your column structure and maps it automatically.",f9_p2:"PDF Extraction",f9_p3:"AI Mapping",
+  f10_title:"Export &amp; Backup",f10_desc:"Export any data view to Excel or CSV. Create encrypted .vbf backup files with AES-256-GCM integrity protection. Restore backups instantly. Your data remains portable and under your control.",f10_p1:"Excel Export",f10_p2:"Encrypted Backup",f10_p3:"One-Click Restore",
+  f11_title:"Multi-Country &amp; Legal",f11_desc:"Pre-configured for Morocco, France, Belgium, and Andorra. Each country has its own chart of accounts, legal reference documentation, expense categories, and regulatory framework.",
+  f12_title:"Maintenance Tracking",f12_desc:"Schedule and track building maintenance tasks, repairs, and service contracts. Keep a history of interventions, costs, and upcoming renewals for full lifecycle management.",f12_p1:"Task Scheduling",f12_p2:"Cost History",f12_p3:"Contract Renewals",
+  audit_badge:"Key Differentiator",audit_title1:"The Contextual Audit Engine:",audit_title2:"Verify Claims, Not Just Numbers",
+  audit_intro:'Most tools check if the numbers add up. VBF Syndic Pro+ goes further: it helps the <strong class="text-white">commissaire aux comptes</strong> assess whether management decisions reflect the best use of community funds \u2014 by providing the data needed to ask the right questions.',
+  aud1_title:"&#x1f4cb; Contract Renewal Verification",aud1_p1:'The syndic announces: <em>\u201cWe changed the gardening contractor \u2014 the new one costs less.\u201d</em> But is that the full picture?',
+  aud1_p2:"The contextual audit engine allows the commissaire to compare the old contract against the new one side by side: What was the previous scope of service? What is the new scope? Is the cost per intervention actually lower, or was the number of interventions reduced? The commissaire can verify whether the community is paying less for the same quality, or simply receiving less service.",
+  aud2_title:"&#x1f4b6; Cost Reduction Claims",aud2_p1:'The syndic states: <em>\u201cSecurity costs will be lower next year.\u201d</em> The commissaire needs to verify: is this a genuine efficiency gain?',
+  aud2_p2:"With the audit engine, the commissaire can cross-reference the current security contract, past invoices, and the proposed new terms. Did the number of guard hours decrease? Were overnight shifts removed? Is the quoted rate genuinely competitive, or does the reduction come from cutting coverage? The data is structured for this exact type of analysis.",
+  aud3_title:"&#x1f9fe; Invoice-Level Traceability",aud3_p1:"Every charge recorded in the system can be traced back to its source document. The commissaire can verify each expense individually.",
+  aud3_p2:"The audit engine flags entries that lack supporting documentation, detects duplicate charges, identifies amounts that fall outside expected ranges for a given account category, and highlights supplier changes mid-year. This gives the commissaire a structured checklist rather than manual paper review.",
+  aud4_title:"&#x1f4ca; Budget vs. Actual Analysis",aud4_p1:"Owners approved a budget at the last AG. Did the syndic stay within those limits? Where did variances occur, and are they justified?",
+  aud4_p2:"The contextual audit automatically compares budgeted amounts against actual expenses, line by line and category by category. It highlights significant variances and lets the commissaire drill into the underlying charges. Were overruns caused by emergency repairs, price increases, or scope changes? The data provides the context for an informed assessment.",
+  audit_summary:'The contextual audit engine transforms the commissaire\u2019s role from a <em>number checker</em> into an <em>informed evaluator</em>. It provides the structured data, cross-references, and comparisons needed to assess not just <strong class="text-white">whether the accounts are correct</strong>, but whether the management decisions behind them represent <strong class="gold-text">efficient and responsible use of community funds</strong>.',
+  why_badge:"Why VBF Syndic Pro+?",why_title:'Built by a Syndic President.<br><span class="gold-text">For Syndic Councils.</span>',
+  why_sub:"VBF Syndic Pro+ was designed from real-world syndic experience. Every feature addresses a concrete need that arose from managing a co-property with a volunteer council.",
+  w1_title:"&#x2714; Professional-Grade Management",w1_desc:"Give your volunteer council the same operational capabilities as a professional property manager. Budget tracking, payment management, financial statements, and audit tools \u2014 all in one application, at a fraction of the cost of outsourcing.",
+  w2_title:"&#x2714; Your Data, Your Control",w2_desc:"All data stays on your computer. No cloud servers, no SaaS subscriptions, no third-party access. Export your data at any time in standard formats. If you stop using the software, your data remains yours, fully portable.",
+  w3_title:"&#x2714; Bank-Level Encryption",w3_desc:"All stored data is encrypted with AES-256-GCM \u2014 the standard used by financial institutions. Backups are encrypted. Owner portal files use authenticated encryption with integrity verification: any unauthorized modification is detected automatically.",
+  w4_title:"&#x2714; AG-Ready in Minutes",w4_desc:"The bilan, individual owner statements, audit report, and commissaire document are generated automatically from your data. One click and you have everything the general assembly needs \u2014 formatted, accurate, and ready to present.",
+  w5_title:"&#x2714; Role-Based Governance",w5_desc:"Assign specific roles to council members: the treasurer manages charges and budget, the payment assistant handles collections, the commissaire has audit-only access. Full delegation with clear boundaries at every level.",
+  w6_title:"&#x2714; Designed for Transparency",w6_desc:"Every owner can receive their own encrypted personal statement with full breakdowns of charges, payments, and balances. The audit engine provides structured verification tools. Clear answers are always available when questions arise.",
+  comp_title:"VBF Syndic Pro+ vs. The Alternatives",comp_h2:"Spreadsheets",comp_h3:"Professional Syndic",comp_h4:"Generic Accounting",
+  comp_r1:"Co-property workflows",comp_r2:"Contextual audit engine",comp_r3:"Sharing key distribution",comp_r4:"Encrypted owner portal",comp_r5:"Data stays local",comp_r6:"No recurring fees",comp_r7:"AG-ready reports",comp_varies:"Varies",comp_manual:"Manual",
+  how_badge:"Getting Started",how_title:'Up and Running in <span class="gold-text">30 Minutes</span>',how_sub:"No complex setup. No training required. Import your existing data and start producing professional results immediately.",
+  step1_t:"Install",step1_d:"Download the Windows installer. Launch the app. Select your country and language.",
+  step2_t:"Import",step2_d:"Use the Import Wizard to bring in your owners, lots, and existing financial data from Excel files.",
+  step3_t:"Manage",step3_d:"Record charges, track payments, reconcile bank statements, and monitor your budget in real time.",
+  step4_t:"Report",step4_d:"Generate the bilan, owner statements, audit report, and commissaire documents for your AG.",
+  sec_badge:"Security Architecture",sec_title:'Your Financial Data Deserves<br><span class="gold-text">Bank-Level Protection</span>',
+  s1_title:"AES-256-GCM Encryption",s1_desc:"All data stored locally is encrypted with AES-256-GCM using PBKDF2 key derivation. This is the standard used by financial institutions and government agencies worldwide.",
+  s2_title:"Integrity-Protected Documents",s2_desc:"Owner portal HTML files use authenticated encryption. If anyone modifies any content \u2014 an amount, a name, a balance \u2014 the integrity check fails and the document displays a protection notice. Financial integrity is cryptographically guaranteed.",
+  s3_title:"4-Level Access Control",s3_desc:"Four distinct roles with granular permissions: <strong>Syndic</strong> (full access), <strong>Charges Assistant</strong> (budget &amp; expenses), <strong>Payments Assistant</strong> (collections &amp; statements), and <strong>Commissaire</strong> (audit-only).",
+  s4_title:"Encrypted Backups",s4_desc:"Backup files (.vbf) are encrypted with their own AES-256-GCM key. Regular reminders ensure you never lose data. Restore any backup with one click. No cloud dependency.",
+  stat1:"Integrated Modules",stat2:"Countries Supported",stat3:"Audit Engines",stat4:"-bit Encryption",
+  price_badge:"Simple Pricing",price_title:'One License. <span class="gold-text">No Surprises.</span>',price_sub:"No monthly subscriptions. No per-seat fees. No hidden costs. Pay once for your community, and it is yours.",
+  plan1_label:"Community License",plan1_per:"per owner \u2022 one-time",plan1_f1:"All 20+ modules included",plan1_f2:"Unlimited data entry",plan1_f3:"All export formats (Excel, CSV, Word, HTML)",plan1_f4:"Encrypted owner portal generation",plan1_f5:"Automated audit engine",plan1_f6:"Multi-country &amp; bilingual support",plan1_f7:"4 installations included (one per role)",plan1_eg:"Example: 40 owners = 800\u20ac one-time",plan1_seats:"Each license activates on 4 computers \u2014 Syndic, Charges, Payments &amp; Commissaire",
+  plan2_label:"Annual Maintenance",plan2_per:"per owner \u2022 per year \u2022 optional",plan2_f1:"Priority email support",plan2_f2:"All software updates",plan2_f3:"New features as released",plan2_f4:"Regulatory updates",plan2_f5:"Data migration assistance",plan2_note:"Cancel anytime \u2014 your data and license remain valid",
+  buy_info:"Purchase securely, then request your activation key by email.",
+  form_title:"License Activation",form_sub:"Submit your details below. After payment confirmation, your activation key will be sent within 24 hours.",
+  form_name:"Full Name",form_email:"Email Address",form_community:"Community / Residence Name",form_owners:"Number of Owners",
+  form_maint_yes:"Include Annual Maintenance (10\u20ac / owner / year)",form_maint_no:"License Only \u2014 No Maintenance",form_submit:"Request License Activation",
+  legal_badge:"Legal",legal_title:"Privacy Policy &amp; Terms",legal_eff:"Effective Date:",legal_upd:"Last Updated:",
+  leg1_h:"1. Overview",leg1_p:"VBF Syndic Pro+ is committed to protecting your privacy. This policy explains our data practices for the desktop application.",
+  leg2_h:"2. Data Storage",leg2_p:"<strong>All data is stored locally on your device.</strong> VBF Syndic Pro+ does not transmit community accounting data to external servers. The only outbound connection is license key validation.",
+  leg3_h:"3. Data Collection",leg3_p:"<strong>We collect no central cloud data.</strong> The app is local-first. Your residence data stays entirely on your infrastructure.",
+  leg4_h:"4. Security",leg4_p:"Protected by AES-256-GCM encryption, role-based access control, and full user control over backup, export, and deletion operations.",
+  leg5_h:"5. User Rights",leg5_p:"You can access, export, restore, and permanently delete all data at any time. No approval required.",
+  leg6_h:"6. Licensing",leg6_p:"Licensed per community based on owner count. License keys are perpetual. Maintenance subscriptions are optional and cancellable.",
+  leg7_h:"7. Contact",
+  legal_quote:"\u201cYour community data is yours alone. We don\u2019t monetize it, and we don\u2019t broker it.\u201d",
+  badge_trial:"Free Trial \u2014 Full Access",badge_demo:"Demo Data Included",
+  trial_title:"&#x1f3af; Try Before You Buy",trial_desc:'Download VBF Syndic Pro+ and explore every feature with <strong class="text-white">full access during the trial period</strong>. No credit card required, no feature restrictions. Every module is available from day one so you can evaluate the complete platform.',
+  trial_demo:'The installer includes a <strong class="text-white">ready-made demo data file</strong> that you can upload instantly. It contains a realistic co-property with owners, lots, charges, payments, and financial history \u2014 so you can see exactly how the application works with real-world data before entering your own.',
+  trial_box1_t:"Full-Access Trial",trial_box1_d:"All 20+ modules unlocked during trial",trial_box2_t:"Demo Data File",trial_box2_d:"Upload the included .vbf file to explore",
+  footer_tag:"Built with conviction in Morocco &#x1f1f2;&#x1f1e6;<br>For self-managed communities worldwide"
+},
+fr: {
+  nav_sub:"Gestion de Copropri\u00e9t\u00e9",nav_features:"Fonctionnalit\u00e9s",nav_audit:"Audit",nav_why:"Pourquoi Nous",nav_pricing:"Tarifs",nav_cta:"Commencer",
+  hero_title:"Gestion Professionnelle de Copropri\u00e9t\u00e9,<br>Sans la Complexit\u00e9.",
+  hero_sub:'<strong class="text-white">VBF Syndic Pro+</strong> est la solution de bureau tout-en-un pour les copropri\u00e9t\u00e9s \u2014 budget, charges, paiements, audits, relev\u00e9s individuels et rapports d\u2019assembl\u00e9e g\u00e9n\u00e9rale dans une seule application s\u00e9curis\u00e9e et locale.',
+  hero_tagline:"Aucune d\u00e9pendance cloud. Aucun abonnement mensuel. Con\u00e7u par un pr\u00e9sident de conseil syndical, pour les conseils syndicaux.",
+  hero_cta:"Obtenir Votre Licence",hero_explore:"Explorer les Fonctionnalit\u00e9s &darr;",
+  pill_countries:"&#x1f3e2; Multi-Pays (MA, FR, BE, AD)",pill_audit:"&#x1f4ca; Moteur d\u2019Audit Automatis\u00e9",pill_lang:"&#x1f30d; Fran\u00e7ais &amp; Anglais",
+  challenge_badge:"Le D\u00e9fi",challenge_title:"G\u00e9rer une Copropri\u00e9t\u00e9 N\u00e9cessite les Bons Outils",
+  challenge_sub:"Les conseils syndicaux b\u00e9n\u00e9voles ont les m\u00eames responsabilit\u00e9s que les gestionnaires professionnels. Disposer du bon logiciel fait la diff\u00e9rence entre une gouvernance efficace et un travail manuel chronophage.",
+  ch1_title:"Donn\u00e9es Dispers\u00e9es",ch1_desc:"Fichiers multiples, formules incoh\u00e9rentes, versions diff\u00e9rentes. Un syst\u00e8me unifi\u00e9 centralise tout et \u00e9limine les erreurs manuelles.",
+  ch2_title:"Responsabilit\u00e9 &amp; Tra\u00e7abilit\u00e9",ch2_desc:"Les copropri\u00e9taires m\u00e9ritent une visibilit\u00e9 claire sur la gestion des fonds communs. Des registres structur\u00e9s et des pistes d\u2019audit renforcent la confiance \u00e0 chaque assembl\u00e9e g\u00e9n\u00e9rale.",
+  ch3_title:"Reporting Chronophage",ch3_desc:"Pr\u00e9parer le bilan annuel, calculer les relev\u00e9s individuels et rapprocher les comptes bancaires demande un temps consid\u00e9rable chaque ann\u00e9e.",
+  feat_badge:"Capacit\u00e9s de la Plateforme",feat_title:"Tout Ce Dont Vous Avez Besoin.<br>Rien de Superflu.",feat_sub:"Une application con\u00e7ue sp\u00e9cifiquement pour couvrir toutes les fonctions d\u2019un conseil syndical autog\u00e9r\u00e9 \u2014 de la mise en route \u00e0 la cl\u00f4ture annuelle.",
+  f1_title:"Registre Propri\u00e9taires &amp; Lots",f1_desc:"Maintenez un registre complet des copropri\u00e9taires et de leurs lots. Enregistrez les cl\u00e9s de r\u00e9partition (tanti\u00e8mes), coordonn\u00e9es et historique de propri\u00e9t\u00e9. Recherche, filtrage et export \u00e0 tout moment.",f1_p3:"Tanti\u00e8mes",
+  f2_title:"Budget &amp; Charges",f2_desc:"Cr\u00e9ez des budgets annuels avec ventilation ligne par ligne. Enregistrez chaque d\u00e9pense sur le bon code comptable avec d\u00e9tection automatique par IA. Suivez l\u2019\u00e9cart budg\u00e9taire en temps r\u00e9el.",f2_p1:"Planification Budg\u00e9taire",f2_p2:"Saisie des D\u00e9penses",f2_p3:"Affectation IA",
+  f3_title:"Paiements &amp; Recouvrements",f3_desc:"Enregistrez les paiements des propri\u00e9taires par tranche. Suivez l\u2019\u00e9tat des recouvrements et les soldes en retard. Calcul automatique des avances, arri\u00e9r\u00e9s et soldes par propri\u00e9taire sur plusieurs exercices.",f3_p1:"Suivi des Paiements",f3_p2:"D\u00e9tection Impay\u00e9s",
+  f4_title:"Tr\u00e9sorerie &amp; Rapprochement Bancaire",f4_desc:"Importez les relev\u00e9s bancaires et rapprochez-les des charges et paiements enregistr\u00e9s. G\u00e9rez les op\u00e9rations de caisse, les virements internes et maintenez une piste de tr\u00e9sorerie compl\u00e8te.",f4_p1:"Import Bancaire",f4_p2:"Compte Caisse",f4_p3:"Rapprochement",
+  f5_title:"\u00c9tats Financiers (Bilan)",f5_desc:"G\u00e9n\u00e9rez automatiquement les \u00e9tats financiers annuels complets. Le bilan comptable, le bilan et le r\u00e9sum\u00e9 charges/produits sont calcul\u00e9s \u00e0 partir de vos donn\u00e9es \u2014 aucune formule manuelle n\u00e9cessaire.",f5_p2:"Bilan",f5_p3:"Calcul Automatique",
+  f6_title:"Portail Propri\u00e9taire &amp; Mailing",f6_desc:"G\u00e9n\u00e9rez des portails HTML chiffr\u00e9s pour chaque propri\u00e9taire avec relev\u00e9 individuel, d\u00e9tail des charges et solde. Envoi group\u00e9 par email. Chaque fichier est autonome et prot\u00e9g\u00e9 en int\u00e9grit\u00e9.",f6_p1:"HTML Chiffr\u00e9",f6_p2:"Email Group\u00e9",f6_p3:"Int\u00e9grit\u00e9 Prot\u00e9g\u00e9e",
+  f7_title:"Assembl\u00e9e G\u00e9n\u00e9rale (AG)",f7_desc:"Pr\u00e9parez et documentez votre AG avec les outils int\u00e9gr\u00e9s. Suivi des pr\u00e9sences, calcul du quorum par tranche, enregistrement des r\u00e9solutions et g\u00e9n\u00e9ration des proc\u00e8s-verbaux officiels.",f7_p1:"Suivi du Quorum",f7_p2:"Pr\u00e9sences",
+  f8_title:"Rapport du Commissaire",f8_desc:"G\u00e9n\u00e9rez un rapport structur\u00e9 pour le commissaire aux comptes (Word .docx). Donn\u00e9es financi\u00e8res pr\u00e9-remplies, conclusions d\u2019audit incluses, format\u00e9 pour la pr\u00e9sentation officielle en AG.",f8_p1:"Export Word",f8_p2:"Auto-G\u00e9n\u00e9r\u00e9",f8_p3:"Pr\u00eat pour l\u2019AG",
+  f9_title:"Assistant d\u2019Import Intelligent",f9_desc:"Importez vos donn\u00e9es existantes depuis Excel, CSV et PDF avec un moteur de mapping de colonnes par IA. L\u2019assistant d\u00e9tecte la structure de vos colonnes et les mappe automatiquement.",f9_p2:"Extraction PDF",f9_p3:"Mapping IA",
+  f10_title:"Export &amp; Sauvegarde",f10_desc:"Exportez toute vue en Excel ou CSV. Cr\u00e9ez des fichiers de sauvegarde .vbf chiffr\u00e9s avec protection d\u2019int\u00e9grit\u00e9 AES-256-GCM. Restauration en un clic. Vos donn\u00e9es restent portables et sous votre contr\u00f4le.",f10_p1:"Export Excel",f10_p2:"Sauvegarde Chiffr\u00e9e",f10_p3:"Restauration en 1 Clic",
+  f11_title:"Multi-Pays &amp; Juridique",f11_desc:"Pr\u00e9configur\u00e9 pour le Maroc, la France, la Belgique et Andorre. Chaque pays dispose de son propre plan comptable, r\u00e9f\u00e9rences juridiques, cat\u00e9gories de d\u00e9penses et cadre r\u00e9glementaire.",
+  f12_title:"Suivi de Maintenance",f12_desc:"Planifiez et suivez les t\u00e2ches de maintenance, r\u00e9parations et contrats de service. Historique des interventions, co\u00fbts et renouvellements \u00e0 venir pour une gestion compl\u00e8te du cycle de vie.",f12_p1:"Planification",f12_p2:"Historique des Co\u00fbts",f12_p3:"Renouvellement Contrats",
+  audit_badge:"Diff\u00e9renciateur Cl\u00e9",audit_title1:"Le Moteur d\u2019Audit Contextuel :",audit_title2:"V\u00e9rifier les Affirmations, Pas Seulement les Chiffres",
+  audit_intro:'La plupart des outils v\u00e9rifient si les chiffres sont corrects. VBF Syndic Pro+ va plus loin : il aide le <strong class="text-white">commissaire aux comptes</strong> \u00e0 \u00e9valuer si les d\u00e9cisions de gestion refl\u00e8tent une utilisation optimale des fonds de la copropri\u00e9t\u00e9 \u2014 en fournissant les donn\u00e9es n\u00e9cessaires pour poser les bonnes questions.',
+  aud1_title:"&#x1f4cb; V\u00e9rification des Renouvellements de Contrats",aud1_p1:'Le syndic annonce : <em>\u00ab\u00a0Nous avons chang\u00e9 de prestataire jardinage \u2014 le nouveau co\u00fbte moins cher.\u00a0\u00bb</em> Mais est-ce toute l\u2019histoire ?',
+  aud1_p2:"Le moteur d\u2019audit contextuel permet au commissaire de comparer l\u2019ancien contrat avec le nouveau c\u00f4te \u00e0 c\u00f4te : quel \u00e9tait le p\u00e9rim\u00e8tre de service pr\u00e9c\u00e9dent ? Quel est le nouveau ? Le co\u00fbt par intervention est-il r\u00e9ellement inf\u00e9rieur, ou le nombre d\u2019interventions a-t-il \u00e9t\u00e9 r\u00e9duit ? Le commissaire peut v\u00e9rifier si la copropri\u00e9t\u00e9 paie moins pour la m\u00eame qualit\u00e9, ou re\u00e7oit simplement moins de service.",
+  aud2_title:"&#x1f4b6; V\u00e9rification des R\u00e9ductions de Co\u00fbts",aud2_p1:'Le syndic d\u00e9clare : <em>\u00ab\u00a0Les co\u00fbts de s\u00e9curit\u00e9 seront inf\u00e9rieurs l\u2019ann\u00e9e prochaine.\u00a0\u00bb</em> Le commissaire doit v\u00e9rifier : est-ce un v\u00e9ritable gain d\u2019efficacit\u00e9 ?',
+  aud2_p2:"Avec le moteur d\u2019audit, le commissaire peut croiser le contrat de s\u00e9curit\u00e9 actuel, les factures pass\u00e9es et les nouvelles conditions propos\u00e9es. Le nombre d\u2019heures de garde a-t-il diminu\u00e9 ? Les rondes de nuit ont-elles \u00e9t\u00e9 supprim\u00e9es ? Le tarif propos\u00e9 est-il r\u00e9ellement comp\u00e9titif, ou la r\u00e9duction provient-elle d\u2019une diminution de couverture ? Les donn\u00e9es sont structur\u00e9es pour ce type d\u2019analyse.",
+  aud3_title:"&#x1f9fe; Tra\u00e7abilit\u00e9 au Niveau Facture",aud3_p1:"Chaque charge enregistr\u00e9e dans le syst\u00e8me est tra\u00e7able jusqu\u2019\u00e0 son document source. Le commissaire peut v\u00e9rifier chaque d\u00e9pense individuellement.",
+  aud3_p2:"Le moteur d\u2019audit signale les \u00e9critures sans justificatif, d\u00e9tecte les charges en double, identifie les montants hors des fourchettes attendues pour une cat\u00e9gorie comptable donn\u00e9e, et met en \u00e9vidence les changements de fournisseur en cours d\u2019ann\u00e9e. Cela donne au commissaire une liste de v\u00e9rification structur\u00e9e.",
+  aud4_title:"&#x1f4ca; Analyse Budget vs. R\u00e9alis\u00e9",aud4_p1:"Les propri\u00e9taires ont approuv\u00e9 un budget lors de la derni\u00e8re AG. Le syndic a-t-il respect\u00e9 ces limites ? O\u00f9 se situent les \u00e9carts et sont-ils justifi\u00e9s ?",
+  aud4_p2:"L\u2019audit contextuel compare automatiquement les montants budg\u00e9t\u00e9s aux d\u00e9penses r\u00e9elles, ligne par ligne et cat\u00e9gorie par cat\u00e9gorie. Il met en \u00e9vidence les \u00e9carts significatifs et permet au commissaire d\u2019examiner les charges sous-jacentes. Les d\u00e9passements sont-ils dus \u00e0 des r\u00e9parations d\u2019urgence, des hausses de prix ou des changements de p\u00e9rim\u00e8tre ? Les donn\u00e9es fournissent le contexte pour une \u00e9valuation \u00e9clair\u00e9e.",
+  audit_summary:'Le moteur d\u2019audit contextuel transforme le r\u00f4le du commissaire d\u2019un <em>v\u00e9rificateur de chiffres</em> en un <em>\u00e9valuateur inform\u00e9</em>. Il fournit les donn\u00e9es structur\u00e9es, les r\u00e9f\u00e9rences crois\u00e9es et les comparaisons n\u00e9cessaires pour \u00e9valuer non seulement <strong class="text-white">si les comptes sont corrects</strong>, mais si les d\u00e9cisions de gestion repr\u00e9sentent une <strong class="gold-text">utilisation efficace et responsable des fonds de la copropri\u00e9t\u00e9</strong>.',
+  why_badge:"Pourquoi VBF Syndic Pro+ ?",why_title:'Con\u00e7u par un Pr\u00e9sident de Syndic.<br><span class="gold-text">Pour les Conseils Syndicaux.</span>',
+  why_sub:"VBF Syndic Pro+ a \u00e9t\u00e9 con\u00e7u \u00e0 partir d\u2019une exp\u00e9rience r\u00e9elle de gestion syndicale. Chaque fonctionnalit\u00e9 r\u00e9pond \u00e0 un besoin concret issu de la gestion d\u2019une copropri\u00e9t\u00e9 avec un conseil b\u00e9n\u00e9vole.",
+  w1_title:"&#x2714; Gestion de Niveau Professionnel",w1_desc:"Donnez \u00e0 votre conseil b\u00e9n\u00e9vole les m\u00eames capacit\u00e9s op\u00e9rationnelles qu\u2019un gestionnaire professionnel. Suivi budg\u00e9taire, gestion des paiements, \u00e9tats financiers et outils d\u2019audit \u2014 le tout dans une seule application, \u00e0 une fraction du co\u00fbt d\u2019externalisation.",
+  w2_title:"&#x2714; Vos Donn\u00e9es, Votre Contr\u00f4le",w2_desc:"Toutes les donn\u00e9es restent sur votre ordinateur. Aucun serveur cloud, aucun abonnement SaaS, aucun acc\u00e8s tiers. Exportez vos donn\u00e9es \u00e0 tout moment en formats standard. Si vous cessez d\u2019utiliser le logiciel, vos donn\u00e9es restent les v\u00f4tres, enti\u00e8rement portables.",
+  w3_title:"&#x2714; Chiffrement de Niveau Bancaire",w3_desc:"Toutes les donn\u00e9es stock\u00e9es sont chiffr\u00e9es en AES-256-GCM \u2014 le standard utilis\u00e9 par les institutions financi\u00e8res. Les sauvegardes sont chiffr\u00e9es. Les fichiers portail utilisent un chiffrement authentifi\u00e9 avec v\u00e9rification d\u2019int\u00e9grit\u00e9 : toute modification non autoris\u00e9e est d\u00e9tect\u00e9e automatiquement.",
+  w4_title:"&#x2714; Pr\u00eat pour l\u2019AG en Quelques Minutes",w4_desc:"Le bilan, les relev\u00e9s individuels, le rapport d\u2019audit et le document du commissaire sont g\u00e9n\u00e9r\u00e9s automatiquement. Un clic et vous avez tout ce dont l\u2019assembl\u00e9e g\u00e9n\u00e9rale a besoin \u2014 format\u00e9, pr\u00e9cis et pr\u00eat \u00e0 pr\u00e9senter.",
+  w5_title:"&#x2714; Gouvernance par R\u00f4les",w5_desc:"Attribuez des r\u00f4les sp\u00e9cifiques aux membres du conseil : le tr\u00e9sorier g\u00e8re les charges et le budget, l\u2019assistant paiements g\u00e8re les recouvrements, le commissaire a un acc\u00e8s audit uniquement. D\u00e9l\u00e9gation compl\u00e8te avec des limites claires.",
+  w6_title:"&#x2714; Con\u00e7u pour la Transparence",w6_desc:"Chaque propri\u00e9taire peut recevoir son relev\u00e9 personnel chiffr\u00e9 avec le d\u00e9tail complet des charges, paiements et soldes. Le moteur d\u2019audit fournit des outils de v\u00e9rification structur\u00e9s. Des r\u00e9ponses claires sont toujours disponibles.",
+  comp_title:"VBF Syndic Pro+ vs. Les Alternatives",comp_h2:"Tableurs",comp_h3:"Syndic Professionnel",comp_h4:"Comptabilit\u00e9 G\u00e9n\u00e9rique",
+  comp_r1:"Workflows copropri\u00e9t\u00e9",comp_r2:"Moteur d\u2019audit contextuel",comp_r3:"R\u00e9partition par cl\u00e9s",comp_r4:"Portail propri\u00e9taire chiffr\u00e9",comp_r5:"Donn\u00e9es locales",comp_r6:"Aucun frais r\u00e9current",comp_r7:"Rapports pr\u00eats pour l\u2019AG",comp_varies:"Variable",comp_manual:"Manuel",
+  how_badge:"Pour Commencer",how_title:'Op\u00e9rationnel en <span class="gold-text">30 Minutes</span>',how_sub:"Aucune configuration complexe. Aucune formation n\u00e9cessaire. Importez vos donn\u00e9es existantes et produisez des r\u00e9sultats professionnels imm\u00e9diatement.",
+  step1_t:"Installer",step1_d:"T\u00e9l\u00e9chargez l\u2019installeur Windows. Lancez l\u2019application. S\u00e9lectionnez votre pays et votre langue.",
+  step2_t:"Importer",step2_d:"Utilisez l\u2019Assistant d\u2019Import pour int\u00e9grer vos propri\u00e9taires, lots et donn\u00e9es financi\u00e8res depuis vos fichiers Excel.",
+  step3_t:"G\u00e9rer",step3_d:"Enregistrez les charges, suivez les paiements, rapprochez les relev\u00e9s bancaires et surveillez votre budget en temps r\u00e9el.",
+  step4_t:"Rapporter",step4_d:"G\u00e9n\u00e9rez le bilan, les relev\u00e9s propri\u00e9taires, le rapport d\u2019audit et les documents du commissaire pour votre AG.",
+  sec_badge:"Architecture de S\u00e9curit\u00e9",sec_title:'Vos Donn\u00e9es Financi\u00e8res M\u00e9ritent<br><span class="gold-text">une Protection de Niveau Bancaire</span>',
+  s1_title:"Chiffrement AES-256-GCM",s1_desc:"Toutes les donn\u00e9es stock\u00e9es localement sont chiffr\u00e9es en AES-256-GCM avec d\u00e9rivation de cl\u00e9 PBKDF2. C\u2019est le standard utilis\u00e9 par les institutions financi\u00e8res et les agences gouvernementales.",
+  s2_title:"Documents \u00e0 Int\u00e9grit\u00e9 Prot\u00e9g\u00e9e",s2_desc:"Les fichiers HTML du portail propri\u00e9taire utilisent un chiffrement authentifi\u00e9. Si quelqu\u2019un modifie un contenu \u2014 un montant, un nom, un solde \u2014 la v\u00e9rification d\u2019int\u00e9grit\u00e9 \u00e9choue et le document affiche un avis de protection.",
+  s3_title:"Contr\u00f4le d\u2019Acc\u00e8s \u00e0 4 Niveaux",s3_desc:"Quatre r\u00f4les distincts avec permissions granulaires : <strong>Syndic</strong> (acc\u00e8s complet), <strong>Assistant Charges</strong> (budget &amp; d\u00e9penses), <strong>Assistant Paiements</strong> (recouvrements &amp; relev\u00e9s), et <strong>Commissaire</strong> (audit uniquement).",
+  s4_title:"Sauvegardes Chiffr\u00e9es",s4_desc:"Les fichiers de sauvegarde (.vbf) sont chiffr\u00e9s avec leur propre cl\u00e9 AES-256-GCM. Des rappels r\u00e9guliers garantissent que vous ne perdez jamais de donn\u00e9es. Restauration en un clic. Aucune d\u00e9pendance cloud.",
+  stat1:"Modules Int\u00e9gr\u00e9s",stat2:"Pays Support\u00e9s",stat3:"Moteurs d\u2019Audit",stat4:"-bit de Chiffrement",
+  price_badge:"Tarification Simple",price_title:'Une Licence. <span class="gold-text">Sans Surprise.</span>',price_sub:"Aucun abonnement mensuel. Aucun frais par utilisateur. Aucun co\u00fbt cach\u00e9. Payez une fois pour votre copropri\u00e9t\u00e9, et c\u2019est \u00e0 vous.",
+  plan1_label:"Licence Copropri\u00e9t\u00e9",plan1_per:"par propri\u00e9taire \u2022 unique",plan1_f1:"Tous les 20+ modules inclus",plan1_f2:"Saisie de donn\u00e9es illimit\u00e9e",plan1_f3:"Tous les formats d\u2019export (Excel, CSV, Word, HTML)",plan1_f4:"G\u00e9n\u00e9ration de portail propri\u00e9taire chiffr\u00e9",plan1_f5:"Moteur d\u2019audit automatis\u00e9",plan1_f6:"Support multi-pays &amp; bilingue",plan1_f7:"4 installations incluses (une par r\u00f4le)",plan1_eg:"Exemple : 40 propri\u00e9taires = 800\u20ac paiement unique",plan1_seats:"Chaque licence s\u2019active sur 4 postes \u2014 Syndic, Charges, Paiements &amp; Commissaire",
+  plan2_label:"Maintenance Annuelle",plan2_per:"par propri\u00e9taire \u2022 par an \u2022 optionnel",plan2_f1:"Support email prioritaire",plan2_f2:"Toutes les mises \u00e0 jour",plan2_f3:"Nouvelles fonctionnalit\u00e9s incluses",plan2_f4:"Mises \u00e0 jour r\u00e9glementaires",plan2_f5:"Assistance \u00e0 la migration",plan2_note:"R\u00e9siliable \u00e0 tout moment \u2014 votre licence et vos donn\u00e9es restent valides",
+  buy_info:"Achetez en toute s\u00e9curit\u00e9, puis demandez votre cl\u00e9 d\u2019activation par email.",
+  form_title:"Activation de Licence",form_sub:"Soumettez vos informations ci-dessous. Apr\u00e8s confirmation du paiement, votre cl\u00e9 d\u2019activation sera envoy\u00e9e sous 24 heures.",
+  form_name:"Nom Complet",form_email:"Adresse Email",form_community:"Nom de la Copropri\u00e9t\u00e9 / R\u00e9sidence",form_owners:"Nombre de Propri\u00e9taires",
+  form_maint_yes:"Inclure la Maintenance Annuelle (10\u20ac / propri\u00e9taire / an)",form_maint_no:"Licence Uniquement \u2014 Sans Maintenance",form_submit:"Demander l\u2019Activation de Licence",
+  legal_badge:"Juridique",legal_title:"Politique de Confidentialit\u00e9 &amp; Conditions",legal_eff:"Date d\u2019entr\u00e9e en vigueur :",legal_upd:"Derni\u00e8re mise \u00e0 jour :",
+  leg1_h:"1. Pr\u00e9sentation",leg1_p:"VBF Syndic Pro+ s\u2019engage \u00e0 prot\u00e9ger votre vie priv\u00e9e. Cette politique explique nos pratiques en mati\u00e8re de donn\u00e9es pour l\u2019application de bureau.",
+  leg2_h:"2. Stockage des Donn\u00e9es",leg2_p:"<strong>Toutes les donn\u00e9es sont stock\u00e9es localement sur votre appareil.</strong> VBF Syndic Pro+ ne transmet pas les donn\u00e9es comptables de la copropri\u00e9t\u00e9 vers des serveurs externes. La seule connexion sortante est la validation de la cl\u00e9 de licence.",
+  leg3_h:"3. Collecte de Donn\u00e9es",leg3_p:"<strong>Nous ne collectons aucune donn\u00e9e cloud centralis\u00e9e.</strong> L\u2019application est locale avant tout. Vos donn\u00e9es de copropri\u00e9t\u00e9 restent enti\u00e8rement sur votre infrastructure.",
+  leg4_h:"4. S\u00e9curit\u00e9",leg4_p:"Prot\u00e9g\u00e9 par le chiffrement AES-256-GCM, le contr\u00f4le d\u2019acc\u00e8s par r\u00f4les et le contr\u00f4le complet de l\u2019utilisateur sur les op\u00e9rations de sauvegarde, export et suppression.",
+  leg5_h:"5. Droits des Utilisateurs",leg5_p:"Vous pouvez acc\u00e9der, exporter, restaurer et supprimer d\u00e9finitivement toutes les donn\u00e9es \u00e0 tout moment. Aucune approbation requise.",
+  leg6_h:"6. Licence",leg6_p:"Licence par copropri\u00e9t\u00e9 selon le nombre de propri\u00e9taires. Les cl\u00e9s de licence sont perp\u00e9tuelles. Les abonnements de maintenance sont optionnels et r\u00e9siliables.",
+  leg7_h:"7. Contact",
+  legal_quote:"\u00ab\u00a0Vos donn\u00e9es de copropri\u00e9t\u00e9 vous appartiennent. Nous ne les mon\u00e9tisons pas et ne les revendons pas.\u00a0\u00bb",
+  badge_trial:"Essai Gratuit \u2014 Acc\u00e8s Complet",badge_demo:"Donn\u00e9es D\u00e9mo Incluses",
+  trial_title:"&#x1f3af; Essayez Avant d\u2019Acheter",trial_desc:'T\u00e9l\u00e9chargez VBF Syndic Pro+ et explorez toutes les fonctionnalit\u00e9s avec un <strong class="text-white">acc\u00e8s complet pendant la p\u00e9riode d\u2019essai</strong>. Aucune carte bancaire requise, aucune restriction. Tous les modules sont disponibles d\u00e8s le premier jour pour \u00e9valuer la plateforme compl\u00e8te.',
+  trial_demo:'L\u2019installeur inclut un <strong class="text-white">fichier de donn\u00e9es d\u00e9mo pr\u00eat \u00e0 l\u2019emploi</strong> que vous pouvez charger instantan\u00e9ment. Il contient une copropri\u00e9t\u00e9 r\u00e9aliste avec propri\u00e9taires, lots, charges, paiements et historique financier \u2014 pour voir exactement comment l\u2019application fonctionne avec des donn\u00e9es r\u00e9elles.',
+  trial_box1_t:"Essai Complet",trial_box1_d:"Tous les 20+ modules d\u00e9bloqu\u00e9s",trial_box2_t:"Fichier D\u00e9mo",trial_box2_d:"Chargez le fichier .vbf inclus pour explorer",
+  footer_tag:"Con\u00e7u avec conviction au Maroc &#x1f1f2;&#x1f1e6;<br>Pour les copropri\u00e9t\u00e9s autog\u00e9r\u00e9es du monde entier"
+}
+};
+
+let currentLang = localStorage.getItem('vbf_lang') || 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('vbf_lang', lang);
+  document.documentElement.lang = lang;
+  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+  document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
+  const dict = T[lang];
+  if (!dict) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] !== undefined) el.placeholder = dict[key];
+  });
+}
+
+// Apply saved language on load
+if (currentLang !== 'en') setLang(currentLang);
+
+// ─── View-only protection: block F12, DevTools, right-click, Ctrl+U/Shift+I ───
+(function(){
+  document.addEventListener('keydown',function(e){
+    if(e.key==='F12')e.preventDefault();
+    if(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='J'||e.key==='C'))e.preventDefault();
+    if(e.ctrlKey&&e.key==='u')e.preventDefault();
+  });
+  document.addEventListener('contextmenu',function(e){e.preventDefault();});
+  // DevTools open detection via debugger timing
+  (function detect(){
+    var t=performance.now();
+    (function(){}).constructor('debugger')();
+    if(performance.now()-t>100){
+      document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#020617;color:#d4af37;font-family:Inter,sans-serif;text-align:center;padding:2rem"><div><h1 style="font-size:2rem;margin-bottom:1rem">&#x1f6e1;&#xfe0f; Document Protected</h1><p style="color:#94a3b8">Developer tools are not allowed on this page.</p></div></div>';
+    }
+    setTimeout(detect,2000);
+  })();
+})();
+</script>
+</body>
+</html>
+
+
+
