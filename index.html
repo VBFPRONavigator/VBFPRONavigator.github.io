@@ -502,12 +502,13 @@
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <span class="badge mb-4" data-i18n="price_badge">Simple Pricing</span>
-      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" data-i18n="price_title">One License. <span class="gold-text">No Surprises.</span></h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto" data-i18n="price_sub">No monthly subscriptions. No per-seat fees. No hidden costs. Pay once for your community, and it is yours.</p>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" data-i18n="price_title">Two Plans. <span class="gold-text">Your Choice.</span></h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto" data-i18n="price_sub">One-time license to get started, or add annual maintenance for continuous updates, support, and new versions.</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
-      <div class="card text-center" style="border-color:rgba(212,175,55,.3)">
-        <div class="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4" data-i18n="plan1_label">Community License</div>
+      <!-- STANDARD LICENSE -->
+      <div class="card text-center">
+        <div class="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4" data-i18n="plan1_label">Standard License</div>
         <div class="stat-number mb-2">30&euro;</div>
         <div class="text-gray-400 text-sm mb-6" data-i18n="plan1_per">per owner &bull; one-time</div>
         <div class="divider mb-6"></div>
@@ -519,24 +520,35 @@
           <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f5">Automated audit engine</span></li>
           <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f6">Multi-country &amp; bilingual support</span></li>
           <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan1_f7">4 installations included (one per role)</span></li>
+          <li class="flex items-start gap-2"><span class="text-gray-600 font-bold mt-0.5">&#x2717;</span> <span class="text-gray-500" data-i18n="plan1_f8">No future version upgrades</span></li>
+          <li class="flex items-start gap-2"><span class="text-gray-600 font-bold mt-0.5">&#x2717;</span> <span class="text-gray-500" data-i18n="plan1_f9">No priority support</span></li>
         </ul>
         <div class="text-[11px] text-gray-500 italic mb-2" data-i18n="plan1_eg">Example: 40 owners = 1,200&euro; one-time</div>
-        <div class="text-[11px] text-gray-500 italic" data-i18n="plan1_seats">Each license activates on 4 computers &mdash; Syndic, Charges, Payments &amp; Commissaire</div>
+        <div class="text-[11px] text-gray-500 italic" data-i18n="plan1_note">You keep your purchased version forever</div>
       </div>
-      <div class="card text-center">
-        <div class="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4" data-i18n="plan2_label">Annual Maintenance</div>
-        <div class="stat-number mb-2">10&euro;</div>
-        <div class="text-gray-400 text-sm mb-6" data-i18n="plan2_per">per owner &bull; per year &bull; optional</div>
+      <!-- PREMIUM LICENSE -->
+      <div class="card text-center relative" style="border-color:rgba(212,175,55,.3)">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2"><span class="badge" style="background:rgba(212,175,55,.2);border-color:rgba(212,175,55,.5)" data-i18n="plan2_rec">Recommended</span></div>
+        <div class="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4" data-i18n="plan2_label">Premium License</div>
+        <div class="flex items-baseline justify-center gap-2 mb-2">
+          <div class="stat-number">30&euro;</div>
+          <span class="text-gray-400 text-lg font-bold">+</span>
+          <div class="stat-number" style="font-size:2rem">10&euro;</div>
+          <span class="text-gray-500 text-xs" data-i18n="plan2_yr">/yr</span>
+        </div>
+        <div class="text-gray-400 text-sm mb-6" data-i18n="plan2_per">per owner &bull; license + annual maintenance</div>
         <div class="divider mb-6"></div>
         <ul class="text-left text-gray-300 text-sm space-y-3 mb-8">
-          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f1">Priority email support</span></li>
-          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f2">All software updates</span></li>
-          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f3">New features as released</span></li>
-          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f4">Regulatory updates</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f0">Everything in Standard, plus:</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f1">All future version upgrades included</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f2">New features as released</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f3">Regulatory &amp; legal updates</span></li>
+          <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f4">Priority email support</span></li>
           <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f5">Data migration assistance</span></li>
           <li class="flex items-start gap-2"><span class="gold-text font-bold mt-0.5">&#x2713;</span> <span data-i18n="plan2_f6">Custom development upon agreement</span></li>
         </ul>
-        <div class="text-[11px] text-gray-500 italic" data-i18n="plan2_note">Cancel anytime &mdash; your data and license remain valid</div>
+        <div class="text-[11px] text-gray-500 italic mb-2" data-i18n="plan2_eg">Example: 40 owners = 1,200&euro; + 400&euro;/year</div>
+        <div class="text-[11px] text-gray-500 italic" data-i18n="plan2_note">Cancel maintenance anytime &mdash; you keep the last version received</div>
       </div>
     </div>
 
@@ -566,9 +578,9 @@
         <select name="country" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold text-sm">
           <option value="MA">Morocco</option><option value="FR">France</option><option value="BE">Belgium</option><option value="AD">Andorra</option>
         </select>
-        <select name="maintenance" id="sel-maintenance" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold text-sm">
-          <option value="yes" data-i18n="form_maint_yes">Include Annual Maintenance (10&euro; / owner / year)</option>
-          <option value="no" data-i18n="form_maint_no">License Only &mdash; No Maintenance</option>
+        <select name="license_type" id="sel-license-type" class="w-full bg-slate-900 border border-white/10 p-4 rounded-lg outline-none focus:border-gold text-sm">
+          <option value="premium" data-i18n="form_premium">Premium License (30&euro;/owner + 10&euro;/owner/year maintenance)</option>
+          <option value="standard" data-i18n="form_standard">Standard License (30&euro;/owner &mdash; no updates)</option>
         </select>
         <button type="submit" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase hover:bg-yellow-500 transition shadow-lg text-sm tracking-wide" data-i18n="form_submit">Request License Activation</button>
       </form>
@@ -689,13 +701,13 @@ en: {
   s3_title:"4-Level Access Control",s3_desc:"Four distinct roles with granular permissions: <strong>Syndic</strong> (full access), <strong>Charges Assistant</strong> (budget &amp; expenses), <strong>Payments Assistant</strong> (collections &amp; statements), and <strong>Commissaire</strong> (audit-only).",
   s4_title:"Encrypted Backups",s4_desc:"Backup files (.vbf) are encrypted with their own AES-256-GCM key. Regular reminders ensure you never lose data. Restore any backup with one click. No cloud dependency.",
   stat1:"Integrated Modules",stat2:"Countries Supported",stat3:"Audit Engines",stat4:"-bit Encryption",
-  price_badge:"Simple Pricing",price_title:'One License. <span class="gold-text">No Surprises.</span>',price_sub:"No monthly subscriptions. No per-seat fees. No hidden costs. Pay once for your community, and it is yours.",
-  plan1_label:"Community License",plan1_per:"per owner \u2022 one-time",plan1_f1:"All 20+ modules included",plan1_f2:"Unlimited data entry",plan1_f3:"All export formats (Excel, CSV, Word, HTML)",plan1_f4:"Encrypted owner portal generation",plan1_f5:"Automated audit engine",plan1_f6:"Multi-country &amp; bilingual support",plan1_f7:"4 installations included (one per role)",plan1_eg:"Example: 40 owners = 1,200\u20ac one-time",plan1_seats:"Each license activates on 4 computers \u2014 Syndic, Charges, Payments &amp; Commissaire",
-  plan2_label:"Annual Maintenance",plan2_per:"per owner \u2022 per year \u2022 optional",plan2_f1:"Priority email support",plan2_f2:"All software updates",plan2_f3:"New features as released",plan2_f4:"Regulatory updates",plan2_f5:"Data migration assistance",plan2_f6:"Custom development upon agreement",plan2_note:"Cancel anytime \u2014 your data and license remain valid",
+  price_badge:"Simple Pricing",price_title:'Two Plans. <span class="gold-text">Your Choice.</span>',price_sub:"One-time license to get started, or add annual maintenance for continuous updates, support, and new versions.",
+  plan1_label:"Standard License",plan1_per:"per owner \u2022 one-time",plan1_f1:"All 20+ modules included",plan1_f2:"Unlimited data entry",plan1_f3:"All export formats (Excel, CSV, Word, HTML)",plan1_f4:"Encrypted owner portal generation",plan1_f5:"Automated audit engine",plan1_f6:"Multi-country &amp; bilingual support",plan1_f7:"4 installations included (one per role)",plan1_f8:"No future version upgrades",plan1_f9:"No priority support",plan1_eg:"Example: 40 owners = 1,200\u20ac one-time",plan1_note:"You keep your purchased version forever",
+  plan2_label:"Premium License",plan2_rec:"Recommended",plan2_per:"per owner \u2022 license + annual maintenance",plan2_yr:"/yr",plan2_f0:"Everything in Standard, plus:",plan2_f1:"All future version upgrades included",plan2_f2:"New features as released",plan2_f3:"Regulatory &amp; legal updates",plan2_f4:"Priority email support",plan2_f5:"Data migration assistance",plan2_f6:"Custom development upon agreement",plan2_eg:"Example: 40 owners = 1,200\u20ac + 400\u20ac/year",plan2_note:"Cancel maintenance anytime \u2014 you keep the last version received",
   buy_info:"Purchase securely, then request your activation key by email.",
   form_title:"License Activation",form_sub:"Submit your details below. After payment confirmation, your activation key will be sent within 24 hours.",
   form_name:"Full Name",form_email:"Email Address",form_community:"Community / Residence Name",form_owners:"Number of Owners",
-  form_maint_yes:"Include Annual Maintenance (10\u20ac / owner / year)",form_maint_no:"License Only \u2014 No Maintenance",form_submit:"Request License Activation",
+  form_premium:"Premium License (30\u20ac/owner + 10\u20ac/owner/year maintenance)",form_standard:"Standard License (30\u20ac/owner \u2014 no updates)",form_submit:"Request License Activation",
   legal_badge:"Legal",legal_title:"Privacy Policy &amp; Terms",legal_eff:"Effective Date:",legal_upd:"Last Updated:",
   leg1_h:"1. Overview",leg1_p:"VBF Syndic Pro+ is committed to protecting your privacy. This policy explains our data practices for the desktop application.",
   leg2_h:"2. Data Storage",leg2_p:"<strong>All data is stored locally on your device.</strong> VBF Syndic Pro+ does not transmit community accounting data to external servers. The only outbound connection is license key validation.",
@@ -773,13 +785,13 @@ fr: {
   s3_title:"Contr\u00f4le d\u2019Acc\u00e8s \u00e0 4 Niveaux",s3_desc:"Quatre r\u00f4les distincts avec permissions granulaires : <strong>Syndic</strong> (acc\u00e8s complet), <strong>Assistant Charges</strong> (budget &amp; d\u00e9penses), <strong>Assistant Paiements</strong> (recouvrements &amp; relev\u00e9s), et <strong>Commissaire</strong> (audit uniquement).",
   s4_title:"Sauvegardes Chiffr\u00e9es",s4_desc:"Les fichiers de sauvegarde (.vbf) sont chiffr\u00e9s avec leur propre cl\u00e9 AES-256-GCM. Des rappels r\u00e9guliers garantissent que vous ne perdez jamais de donn\u00e9es. Restauration en un clic. Aucune d\u00e9pendance cloud.",
   stat1:"Modules Int\u00e9gr\u00e9s",stat2:"Pays Support\u00e9s",stat3:"Moteurs d\u2019Audit",stat4:"-bit de Chiffrement",
-  price_badge:"Tarification Simple",price_title:'Une Licence. <span class="gold-text">Sans Surprise.</span>',price_sub:"Aucun abonnement mensuel. Aucun frais par utilisateur. Aucun co\u00fbt cach\u00e9. Payez une fois pour votre copropri\u00e9t\u00e9, et c\u2019est \u00e0 vous.",
-  plan1_label:"Licence Copropri\u00e9t\u00e9",plan1_per:"par propri\u00e9taire \u2022 unique",plan1_f1:"Tous les 20+ modules inclus",plan1_f2:"Saisie de donn\u00e9es illimit\u00e9e",plan1_f3:"Tous les formats d\u2019export (Excel, CSV, Word, HTML)",plan1_f4:"G\u00e9n\u00e9ration de portail propri\u00e9taire chiffr\u00e9",plan1_f5:"Moteur d\u2019audit automatis\u00e9",plan1_f6:"Support multi-pays &amp; bilingue",plan1_f7:"4 installations incluses (une par r\u00f4le)",plan1_eg:"Exemple : 40 propri\u00e9taires = 1 200\u20ac paiement unique",plan1_seats:"Chaque licence s\u2019active sur 4 postes \u2014 Syndic, Charges, Paiements &amp; Commissaire",
-  plan2_label:"Maintenance Annuelle",plan2_per:"par propri\u00e9taire \u2022 par an \u2022 optionnel",plan2_f1:"Support email prioritaire",plan2_f2:"Toutes les mises \u00e0 jour",plan2_f3:"Nouvelles fonctionnalit\u00e9s incluses",plan2_f4:"Mises \u00e0 jour r\u00e9glementaires",plan2_f5:"Assistance \u00e0 la migration",plan2_f6:"D\u00e9veloppement personnalis\u00e9 sur accord",plan2_note:"R\u00e9siliable \u00e0 tout moment \u2014 votre licence et vos donn\u00e9es restent valides",
+  price_badge:"Tarification Simple",price_title:'Deux Formules. <span class="gold-text">\u00c0 Vous de Choisir.</span>',price_sub:"Une licence unique pour d\u00e9marrer, ou ajoutez la maintenance annuelle pour les mises \u00e0 jour continues, le support et les nouvelles versions.",
+  plan1_label:"Licence Standard",plan1_per:"par propri\u00e9taire \u2022 unique",plan1_f1:"Tous les 20+ modules inclus",plan1_f2:"Saisie de donn\u00e9es illimit\u00e9e",plan1_f3:"Tous les formats d\u2019export (Excel, CSV, Word, HTML)",plan1_f4:"G\u00e9n\u00e9ration de portail propri\u00e9taire chiffr\u00e9",plan1_f5:"Moteur d\u2019audit automatis\u00e9",plan1_f6:"Support multi-pays &amp; bilingue",plan1_f7:"4 installations incluses (une par r\u00f4le)",plan1_f8:"Pas de mises \u00e0 jour de version",plan1_f9:"Pas de support prioritaire",plan1_eg:"Exemple : 40 propri\u00e9taires = 1 200\u20ac paiement unique",plan1_note:"Vous conservez la version achet\u00e9e \u00e0 vie",
+  plan2_label:"Licence Premium",plan2_rec:"Recommand\u00e9",plan2_per:"par propri\u00e9taire \u2022 licence + maintenance annuelle",plan2_yr:"/an",plan2_f0:"Tout le Standard, plus :",plan2_f1:"Toutes les futures mises \u00e0 jour de version incluses",plan2_f2:"Nouvelles fonctionnalit\u00e9s d\u00e8s leur sortie",plan2_f3:"Mises \u00e0 jour r\u00e9glementaires &amp; juridiques",plan2_f4:"Support email prioritaire",plan2_f5:"Assistance \u00e0 la migration",plan2_f6:"D\u00e9veloppement personnalis\u00e9 sur accord",plan2_eg:"Exemple : 40 propri\u00e9taires = 1 200\u20ac + 400\u20ac/an",plan2_note:"R\u00e9siliable \u00e0 tout moment \u2014 vous conservez la derni\u00e8re version re\u00e7ue",
   buy_info:"Achetez en toute s\u00e9curit\u00e9, puis demandez votre cl\u00e9 d\u2019activation par email.",
   form_title:"Activation de Licence",form_sub:"Soumettez vos informations ci-dessous. Apr\u00e8s confirmation du paiement, votre cl\u00e9 d\u2019activation sera envoy\u00e9e sous 24 heures.",
   form_name:"Nom Complet",form_email:"Adresse Email",form_community:"Nom de la Copropri\u00e9t\u00e9 / R\u00e9sidence",form_owners:"Nombre de Propri\u00e9taires",
-  form_maint_yes:"Inclure la Maintenance Annuelle (10\u20ac / propri\u00e9taire / an)",form_maint_no:"Licence Uniquement \u2014 Sans Maintenance",form_submit:"Demander l\u2019Activation de Licence",
+  form_premium:"Licence Premium (30\u20ac/propri\u00e9taire + 10\u20ac/propri\u00e9taire/an maintenance)",form_standard:"Licence Standard (30\u20ac/propri\u00e9taire \u2014 sans mises \u00e0 jour)",form_submit:"Demander l\u2019Activation de Licence",
   legal_badge:"Juridique",legal_title:"Politique de Confidentialit\u00e9 &amp; Conditions",legal_eff:"Date d\u2019entr\u00e9e en vigueur :",legal_upd:"Derni\u00e8re mise \u00e0 jour :",
   leg1_h:"1. Pr\u00e9sentation",leg1_p:"VBF Syndic Pro+ s\u2019engage \u00e0 prot\u00e9ger votre vie priv\u00e9e. Cette politique explique nos pratiques en mati\u00e8re de donn\u00e9es pour l\u2019application de bureau.",
   leg2_h:"2. Stockage des Donn\u00e9es",leg2_p:"<strong>Toutes les donn\u00e9es sont stock\u00e9es localement sur votre appareil.</strong> VBF Syndic Pro+ ne transmet pas les donn\u00e9es comptables de la copropri\u00e9t\u00e9 vers des serveurs externes. La seule connexion sortante est la validation de la cl\u00e9 de licence.",
