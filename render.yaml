@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: vbf-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://vbf-hoa-web.onrender.com
+
+  - type: web
+    name: vbf-hoa-web
+    runtime: static
+    rootDir: hoa-web
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
